@@ -1,0 +1,15 @@
+{
+  "domain": "meteokouran",
+  "name": "MétéoKouran",
+  "categories": ["energy"],
+  "codeowners": ["@jpgiry"],
+  "config_flow": true,
+  "dependencies": ["frontend", "http", "lovelace", "websocket_api"],
+  "documentation": "https://github.com/jpgiry/meteokouran-ha",
+  "integration_type": "service",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/jpgiry/meteokouran-ha/issues",
+  "requirements": [],
+  "single_config_entry": true,
+  "version": "1.0.0"
+}

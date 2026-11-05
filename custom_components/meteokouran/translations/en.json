@@ -1,0 +1,76 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "MétéoKouran",
+        "description": "Electricity weather in Réunion (source: EDF), read from a MétéoKouran instance.",
+        "data": {
+          "url": "Address (URL)"
+        },
+        "data_description": {
+          "url": "Address of the MétéoKouran instance, without /api/v1. Public instance: {default_url}"
+        }
+      },
+      "reconfigure": {
+        "title": "Change the MétéoKouran address",
+        "description": "Entities are kept; the API is read again at once at the new address.",
+        "data": {
+          "url": "Address (URL)"
+        },
+        "data_description": {
+          "url": "Address of the MétéoKouran instance, without /api/v1. Public instance: {default_url}"
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "Invalid address: it must start with https:// (or http://).",
+      "cannot_connect": "Instance unreachable: check the address and Home Assistant's Internet connection.",
+      "timeout": "Timeout: the instance did not answer within 20 seconds.",
+      "not_meteokouran": "Not a MétéoKouran instance: the address answers, but not with the MétéoKouran API (/api/v1/now)."
+    },
+    "abort": {
+      "already_configured": "MétéoKouran is already configured.",
+      "single_instance_allowed": "MétéoKouran is already configured: one instance per Home Assistant.",
+      "reconfigure_successful": "Address saved."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "signal_horaire": {
+        "name": "hourly signal"
+      },
+      "signal_du_jour": {
+        "name": "today's signal"
+      },
+      "signal_de_demain": {
+        "name": "tomorrow's signal"
+      },
+      "donnees_cyclone": {
+        "name": "cyclone data"
+      },
+      "prochain_changement": {
+        "name": "next change"
+      },
+      "pointes_de_demain": {
+        "name": "tomorrow's peaks"
+      }
+    },
+    "binary_sensor": {
+      "reseau_contraint": {
+        "name": "constrained grid"
+      },
+      "cyclone_en_cours": {
+        "name": "cyclone in progress"
+      },
+      "cyclone_annonce": {
+        "name": "cyclone announced"
+      }
+    }
+  },
+  "issues": {
+    "old_card_resource": {
+      "title": "Former MétéoKouran card still loaded",
+      "description": "A dashboard resource still loads the former stand-alone card ({url}). The integration now provides the card: delete this resource (Settings → Dashboards → ⋮ → Resources) and remove \"meteokouran-card\" from HACS, then restart Home Assistant."
+    }
+  }
+}

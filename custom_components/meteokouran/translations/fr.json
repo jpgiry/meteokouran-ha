@@ -1,0 +1,76 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "MétéoKouran",
+        "description": "Météo de l'électricité à La Réunion (source : EDF), lue sur une instance MétéoKouran.",
+        "data": {
+          "url": "Adresse (URL)"
+        },
+        "data_description": {
+          "url": "Adresse de l'instance MétéoKouran, sans /api/v1. Instance publique : {default_url}"
+        }
+      },
+      "reconfigure": {
+        "title": "Changer l'adresse de MétéoKouran",
+        "description": "Les entités sont gardées ; l'API est relue aussitôt avec la nouvelle adresse.",
+        "data": {
+          "url": "Adresse (URL)"
+        },
+        "data_description": {
+          "url": "Adresse de l'instance MétéoKouran, sans /api/v1. Instance publique : {default_url}"
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "Adresse invalide : elle doit commencer par https:// (ou http://).",
+      "cannot_connect": "Instance injoignable : vérifiez l'adresse et la connexion de Home Assistant à Internet.",
+      "timeout": "Délai dépassé : l'instance n'a pas répondu en 20 secondes.",
+      "not_meteokouran": "Ce n'est pas une instance MétéoKouran : l'adresse répond, mais pas avec l'API MétéoKouran (/api/v1/now)."
+    },
+    "abort": {
+      "already_configured": "MétéoKouran est déjà configuré.",
+      "single_instance_allowed": "MétéoKouran est déjà configuré : une seule instance par Home Assistant.",
+      "reconfigure_successful": "Adresse enregistrée."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "signal_horaire": {
+        "name": "signal horaire"
+      },
+      "signal_du_jour": {
+        "name": "signal du jour"
+      },
+      "signal_de_demain": {
+        "name": "signal de demain"
+      },
+      "donnees_cyclone": {
+        "name": "données cyclone"
+      },
+      "prochain_changement": {
+        "name": "prochain changement"
+      },
+      "pointes_de_demain": {
+        "name": "pointes de demain"
+      }
+    },
+    "binary_sensor": {
+      "reseau_contraint": {
+        "name": "réseau contraint"
+      },
+      "cyclone_en_cours": {
+        "name": "cyclone en cours"
+      },
+      "cyclone_annonce": {
+        "name": "cyclone annoncé"
+      }
+    }
+  },
+  "issues": {
+    "old_card_resource": {
+      "title": "Ancienne carte MétéoKouran encore chargée",
+      "description": "Une ressource de tableau de bord charge encore l'ancienne carte seule ({url}). L'intégration fournit maintenant la carte : supprimez cette ressource (Paramètres → Tableaux de bord → ⋮ → Ressources) et désinstallez « meteokouran-card » de HACS, puis redémarrez Home Assistant."
+    }
+  }
+}
