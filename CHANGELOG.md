@@ -2,6 +2,18 @@
 
 Chaque version publiée a sa section `## X.Y.Z` : c'est elle qui sert de notes à la release GitHub.
 
+## 1.1.0
+
+Quatre **automatisations prêtes à l'emploi** (blueprints), une par signal : on les importe par un bouton, on choisit ses appareils, on enregistre, sans YAML. Rien ne change dans les entités ni dans la carte.
+
+- **Vert : profiter d'un réseau optimal** (allume les appareils choisis), **Bleu : heures de pointe** (éteint ou met en pause, surtout la recharge des véhicules), **Orange : réseau contraint** et **Rouge : réseau très contraint** (éteignent ; les climatiseurs peuvent être réglés à une température, 25 °C par défaut, au lieu d'être coupés).
+- Réglages facultatifs : à la sortie du niveau (ne rien faire, remettre l'état d'avant, faire l'inverse), plage horaire, notification avec la source EDF et l'heure des données, rien pendant un cyclone signalé par EDF.
+- Une panne de l'API ou un redémarrage de Home Assistant ne déclenche rien. L'état d'avant est perdu si Home Assistant redémarre pendant le niveau.
+- Liens d'import dans le README (section « Automatisations prêtes à l'emploi »). Home Assistant 2026.10 ou plus récent.
+
+### Carte 1.3.0 (inchangée)
+- Même carte que dans la 1.0.2.
+
 ## 1.0.2
 
 Présentation seulement : rien ne change dans les entités ni dans la carte.

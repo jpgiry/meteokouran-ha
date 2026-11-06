@@ -76,6 +76,32 @@ actions:
       entity_id: switch.chauffe_eau
 ```
 
+## Automatisations prêtes à l'emploi (blueprints)
+Un modèle d'automatisation (« blueprint ») par signal : on l'importe, on choisit ses appareils, on enregistre. **Aucun YAML à écrire.** Il faut l'intégration et Home Assistant 2026.10 ou plus récent.
+
+| Signal | À l'entrée dans le niveau | Importer |
+|---|---|---|
+| **Vert** : profiter d'un réseau optimal | allume les appareils choisis | [![Importer le blueprint Vert.](https://my.home-assistant.io/badges/blueprint_import.svg)](https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https%3A%2F%2Fraw.githubusercontent.com%2Fjpgiry%2Fmeteokouran-ha%2Fmain%2Fblueprints%2Fautomation%2Fmeteokouran%2Fmeteokouran_vert.yaml) |
+| **Bleu** : heures de pointe | éteint ou met en pause les appareils choisis | [![Importer le blueprint Bleu.](https://my.home-assistant.io/badges/blueprint_import.svg)](https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https%3A%2F%2Fraw.githubusercontent.com%2Fjpgiry%2Fmeteokouran-ha%2Fmain%2Fblueprints%2Fautomation%2Fmeteokouran%2Fmeteokouran_bleu.yaml) |
+| **Orange** : réseau contraint | éteint les appareils choisis ; climatiseurs réglés à une température (25 °C par défaut) au lieu d’être coupés, si vous le voulez | [![Importer le blueprint Orange.](https://my.home-assistant.io/badges/blueprint_import.svg)](https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https%3A%2F%2Fraw.githubusercontent.com%2Fjpgiry%2Fmeteokouran-ha%2Fmain%2Fblueprints%2Fautomation%2Fmeteokouran%2Fmeteokouran_orange.yaml) |
+| **Rouge** : réseau très contraint | éteint les appareils choisis ; climatiseurs réglés à une température (25 °C par défaut) au lieu d’être coupés, si vous le voulez | [![Importer le blueprint Rouge.](https://my.home-assistant.io/badges/blueprint_import.svg)](https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https%3A%2F%2Fraw.githubusercontent.com%2Fjpgiry%2Fmeteokouran-ha%2Fmain%2Fblueprints%2Fautomation%2Fmeteokouran%2Fmeteokouran_rouge.yaml) |
+
+1. Bouton **Importer** : votre Home Assistant s'ouvre sur la fenêtre « Importer un Blueprint », adresse remplie → **Aperçu** → **Importer un blueprint**.
+   Sans le bouton, ou si la fenêtre ne s'ouvre pas (vu sur Home Assistant 2026.10) : Paramètres → Automatisations et scènes → Blueprints → **Importer un blueprint**, avec l'adresse du fichier, par exemple `https://raw.githubusercontent.com/jpgiry/meteokouran-ha/main/blueprints/automation/meteokouran/meteokouran_vert.yaml`.
+2. Cliquer sur le blueprint → **Créer une automatisation** → choisir les **appareils** (interrupteurs, prises, lumières, ventilateurs, climatiseurs, chauffe-eau, `input_boolean`) → **Enregistrer**.
+
+Réglages facultatifs, repliés sous les appareils :
+- **À la sortie du niveau** : ne rien faire (par défaut), remettre l'état d'avant, ou faire l'inverse. L'état d'avant est mémorisé à l'entrée dans le niveau ; ce souvenir est **perdu si Home Assistant redémarre** pendant le niveau, et rien n'est alors rétabli.
+- **Plage horaire** : n'agir que si le signal change dans cette plage (00:00 → 00:00 : toute la journée).
+- **Notification** : téléphones à prévenir, message avec « Source : EDF » et l'heure des données.
+- **Cyclone** : ne rien faire pendant un cyclone signalé par EDF (`binary_sensor.meteokouran_cyclone_en_cours`).
+
+Une panne de l'API (entité indisponible) ou un redémarrage de Home Assistant ne déclenche rien : seul un vrai changement de signal compte. Borne de recharge : choisir l'interrupteur de charge que fournit son intégration. Ce sont les données d'EDF, **pas une alerte officielle**.
+
+Un même appareil dans deux de ces automatisations (par exemple la clim, réglée à l'orange et coupée au rouge, avec « Remettre l'état d'avant » à l'orange) : au changement de signal, les deux agissent en même temps et le résultat n'est pas garanti. Mettre chaque appareil dans une seule, ou choisir « Ne rien faire » à la sortie.
+
+Mises à jour : Paramètres → Automatisations et scènes → Blueprints → ⋮ → **Réimporter le Blueprint** → **Réimporter**. Les automatisations existantes prennent aussitôt la nouvelle version, avec vos réglages.
+
 ## Carte
 L'intégration fournit la carte et la charge elle-même dans le tableau de bord : **aucune ressource à déclarer**, en mode tableau de bord normal comme en mode YAML. Modifier le tableau de bord → **Ajouter une carte** → « MétéoKouran » ; toutes les options se règlent dans l'éditeur visuel. En YAML :
 
