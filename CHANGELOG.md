@@ -2,6 +2,15 @@
 
 Chaque version publiée a sa section `## X.Y.Z` : c'est elle qui sert de notes à la release GitHub.
 
+## 1.0.2
+
+Présentation seulement : rien ne change dans les entités ni dans la carte.
+
+- README : les deux captures de la carte sont deux fois plus petites, à l'écran comme en poids (376 px de large au lieu de 752, 69 Ko au lieu de 212 Ko pour les deux), affichées sur 190 px dans GitHub, le Marketplace et HACS.
+
+### Carte 1.3.0 (inchangée)
+- Même carte que dans la 1.0.1.
+
 ## 1.0.1
 
 Compatibilité avec Home Assistant 2026.11 et son **Marketplace** (HACS intégré à Home Assistant). Rien ne change dans les entités ni dans la carte.

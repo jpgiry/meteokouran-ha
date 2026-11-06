@@ -8,7 +8,7 @@ La **« météo de l'électricité » de La Réunion** publiée par EDF, dans Ho
 
 | Thème clair, légende affichée | Thème sombre |
 |---|---|
-| ![Carte MétéoKouran en thème clair : réseau optimal, contraint à 17 h, heures de pointe le soir, légende des quatre signaux](https://raw.githubusercontent.com/jpgiry/meteokouran-ha/main/images/carte-claire-legende.png) | ![Carte MétéoKouran en thème sombre : réseau optimal sur les cinq prochains jours](https://raw.githubusercontent.com/jpgiry/meteokouran-ha/main/images/carte-sombre.png) |
+| <img src="https://raw.githubusercontent.com/jpgiry/meteokouran-ha/main/images/carte-claire-legende.png" width="190" alt="Carte MétéoKouran en thème clair : réseau optimal, contraint à 17 h, heures de pointe le soir, légende des quatre signaux"> | <img src="https://raw.githubusercontent.com/jpgiry/meteokouran-ha/main/images/carte-sombre.png" width="190" alt="Carte MétéoKouran en thème sombre : réseau optimal sur les cinq prochains jours"> |
 
 Quatre signaux, chacun avec son libellé et son pictogramme (jamais la couleur seule) :
 
