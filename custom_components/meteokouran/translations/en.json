@@ -70,7 +70,7 @@
   "issues": {
     "old_card_resource": {
       "title": "Former MétéoKouran card still loaded",
-      "description": "A dashboard resource still loads the former stand-alone card ({url}). The integration now provides the card: delete this resource (Settings → Dashboards → ⋮ → Resources) and remove \"meteokouran-card\" from HACS, then restart Home Assistant."
+      "description": "A dashboard resource still loads the former stand-alone card ({url}). The integration now provides the card: delete this resource (Settings → Dashboards → ⋮ → Resources) and uninstall \"meteokouran-card\" from the Marketplace (HACS before Home Assistant 2026.11), then restart Home Assistant."
     }
   }
 }

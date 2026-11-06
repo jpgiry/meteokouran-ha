@@ -2,6 +2,18 @@
 
 Chaque version publiée a sa section `## X.Y.Z` : c'est elle qui sert de notes à la release GitHub.
 
+## 1.0.1
+
+Compatibilité avec Home Assistant 2026.11 et son **Marketplace** (HACS intégré à Home Assistant). Rien ne change dans les entités ni dans la carte.
+
+- Testée sur Home Assistant 2026.10.1 et 2026.11.0, y compris la migration de HACS vers le Marketplace : l'intégration reste installée et configurée, avec ses mises à jour.
+- Home Assistant 2026.11 : installation par le Marketplace, **sans redémarrage** (la configuration s'ouvre aussitôt). Home Assistant 2026.10 : toujours par HACS.
+- README : deux procédures (Marketplace, HACS), bouton « Open your Home Assistant » vers le Marketplace (il ouvre HACS sur 2026.10), chemins des menus mis à jour (Paramètres → Outils, Paramètres → Appareils et services → Entités). Les étapes d'installation n'apparaissent plus sur la page du Marketplace, qui a son propre bouton.
+- Réparation « Ancienne carte MétéoKouran encore chargée » : elle invite à désinstaller l'ancienne carte du Marketplace (HACS avant 2026.11).
+
+### Carte 1.3.0 (inchangée)
+- Même carte que dans la 1.0.0, vérifiée sur Home Assistant 2026.11 : chargée sans ressource à déclarer, éditeur visuel complet.
+
 ## 1.0.0
 
 Première version : l'intégration remplace le paquet YAML et la carte seule (`meteokouran-card`), en un seul téléchargement HACS.

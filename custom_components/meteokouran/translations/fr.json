@@ -70,7 +70,7 @@
   "issues": {
     "old_card_resource": {
       "title": "Ancienne carte MétéoKouran encore chargée",
-      "description": "Une ressource de tableau de bord charge encore l'ancienne carte seule ({url}). L'intégration fournit maintenant la carte : supprimez cette ressource (Paramètres → Tableaux de bord → ⋮ → Ressources) et désinstallez « meteokouran-card » de HACS, puis redémarrez Home Assistant."
+      "description": "Une ressource de tableau de bord charge encore l'ancienne carte seule ({url}). L'intégration fournit maintenant la carte : supprimez cette ressource (Paramètres → Tableaux de bord → ⋮ → Ressources) et désinstallez « meteokouran-card » du Marketplace (HACS avant Home Assistant 2026.11), puis redémarrez Home Assistant."
     }
   }
 }

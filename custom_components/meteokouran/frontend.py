@@ -9,7 +9,7 @@
   (?v=<integration version>) defeats browser and mobile app caches.
 - The card asks the configured URL with the websocket command meteokouran/config.
 - A dashboard resource still pointing at the former stand-alone card
-  (meteokouran-card from HACS) raises a repair issue: whichever of the two
+  (meteokouran-card from HACS or the Marketplace) raises a repair issue: whichever of the two
   files loads first defines the card.
 """
 
